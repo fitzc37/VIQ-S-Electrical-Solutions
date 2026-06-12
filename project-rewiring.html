@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete House Rewiring | VIQ Electrical</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0c12;
+            color: #eef2ff;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(245, 176, 66, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #f5b042;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: 0.3s;
+            border: 1px solid rgba(245,176,66,0.3);
+        }
+        .back-btn:hover {
+            background: #f5b042;
+            color: #0a0c12;
+            transform: translateX(-5px);
+        }
+        .project-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease;
+        }
+        .project-hero h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #fff, #f5b042);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .project-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-image {
+            flex: 1;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5);
+        }
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .project-description {
+            flex: 1;
+            background: rgba(18, 22, 35, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            padding: 2rem;
+            border: 1px solid rgba(245,176,66,0.3);
+        }
+        .cta-contact {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .liquid-btn {
+            background: linear-gradient(95deg, #f5b042, #d48a2b);
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            color: #0a0c12;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .liquid-btn:hover {
+            transform: scale(1.02);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(245,176,66,0.3);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        
+        <div class="project-hero">
+            <h1>Complete House Rewiring</h1>
+            <p style="color: #f5b042; margin-top: 0.5rem;">Modern panel upgrade & safety compliance</p>
+        </div>
+        
+        <div class="project-content">
+            <div class="project-image">
+                <img src="../images/rewiring.png" alt="Complete house rewiring">
+            </div>
+            <div class="project-description">
+                <h2><i class="fas fa-clipboard-list"></i> Project Overview</h2>
+                <p style="margin: 1rem 0; line-height: 1.6;">We upgraded an old fuse box to a modern consumer unit, rewired the entire ground floor, and installed energy‑efficient LED lighting. The client reported 30% less energy consumption.</p>
+                <h3><i class="fas fa-tasks"></i> Key Highlights</h3>
+                <ul style="margin: 1rem 0 0 1.5rem;">
+                    <li>Full compliance with latest safety codes</li>
+                    <li>Smart circuit labelling for easy maintenance</li>
+                    <li>Completed in 2 days with minimal disruption</li>
+                </ul>
+                <div class="cta-contact">
+                    <a href="../index.html#contact" class="liquid-btn"><i class="fas fa-paper-plane"></i> Request similar service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 VIQ ELECTRICAL — “WE MAKE IT LIGHT”</p>
+    </footer>
+    <script>
+        gsap.from(".project-hero", { opacity: 0, y: 40, duration: 0.8, ease: "power2.out" });
+        gsap.from(".project-content", { opacity: 0, y: 30, duration: 0.8, delay: 0.2 });
+    </script>
+</body>
+</html>
