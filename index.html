@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>VIQ Electrical | Victor – We Make It Light</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+     <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="page-loader" style="position: fixed; top:0; left:0; width:100%; height:100%; background: #0a0c12; z-index: 10000; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: opacity 0.8s;">
+    <div class="logo" style="font-size: 3rem;">🔌 VIQ Electrical</div>
+    <div style="margin-top: 1rem; color: #f5b042;">We Make It Light</div>
+    <div class="loader-spinner" style="margin-top: 2rem; width: 40px; height: 40px; border: 4px solid rgba(245,176,66,0.3); border-top: 4px solid #f5b042; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+</div>
+
+<div class="mouse-glow" id="mouseGlow"></div>
+<div id="menuOverlay" class="menu-overlay"></div>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">🔌 VIQ Electrical</div>
+        <button id="themeToggle" style="background: none; border: none; color: #f5b042; font-size: 1.4rem; cursor: pointer; margin-left: auto; margin-right: 1rem;"><i class="fas fa-moon"></i></button>
+        <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" id="openGalleryBtn">📸 Our Work</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="circuit-pattern"></div>
+        <div class="container hero-content">
+            <div class="hero-badge"><i class="fas fa-lightbulb"></i> WE MAKE IT LIGHT</div>
+            <h1>Victor – <span style="color:#f5b042">VIQ Electrical</span><br>Solution Services</h1>
+            <p><span id="typed-words" style="color: #f5b042; font-weight: 600;"></span></p>
+            <div class="catchphrase"><i class="fas fa-bolt"></i> “WE MAKE IT LIGHT”</div>
+            <div class="btn-group" style="margin-top: 2rem; gap:1rem;">
+                <a href="tel:+254715817822" class="liquid-btn" style="text-decoration:none; display:inline-block"><i class="fas fa-phone-alt"></i> Call Now</a>
+                <a href="https://wa.me/254715817822?text=Hello%20Victor%2C%20I%20need%20electrical%20help" target="_blank" class="btn-outline" style="text-decoration:none; display:inline-block"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container" style="padding: 5rem 0;">
+        <h2 class="section-title reveal">About Victor</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+            <img src="images/Gemini_Generated_Image_edhhg8edhhg8edhh.png" alt="Victor" class="victor-photo" id="victorImg">
+            <div style="flex:1">
+                <p style="font-size:1.1rem;">Victor, founder of <strong>VIQ ELECTRICAL SOLUTION SERVICES</strong>, has over 12 years of hands-on experience. He specializes in complete wiring, fast fault diagnosis, TV mounting, and energy-efficient solar & security lighting. His motto “We make it light” reflects his commitment to quality and transparency.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.5rem;">
+                    <span class="glass-card" style="padding:0.5rem 1rem;">✔️ Licensed & Insured</span>
+                    <span class="glass-card" style="padding:0.5rem 1rem;">✔️ 24/7 Emergency</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="container" style="padding: 2rem 0 5rem;">
+        <h2 class="section-title reveal">Core Services</h2>
+        <div class="services-grid">
+            <div class="service-card glass-card"><i class="fas fa-bolt"></i><h3>Installation & Wiring</h3><p>Complete rewiring, panel upgrades, lighting & safety compliance.</p></div>
+            <div class="service-card glass-card"><i class="fas fa-search"></i><h3>Fault Finding & Repairs</h3><p>Fast diagnostics, short circuits, power surges, full repair.</p></div>
+            <div class="service-card glass-card"><i class="fas fa-tv"></i><h3>TV Mounts</h3><p>Professional wall mounting, cable concealment, perfect positioning.</p></div>
+            <div class="service-card glass-card"><i class="fas fa-sun"></i><h3>Security & Solar Lights</h3><p>Motion sensors, solar garden lights, security floodlights.</p></div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="container" style="padding: 5rem 0;">
+        <h2 class="section-title reveal">What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card glass-card reveal"><p>"VIQ Electrical provided exceptional service. Victor was professional, efficient, and solved our complex wiring issue quickly. Highly recommend Him"</p><div class="client-info"><h4>— Kevin Magero</h4><span>Homeowner, Kisumu</span></div></div>
+            <div class="testimonial-card glass-card reveal"><p>"From installation to maintenance, VIQ Electrical has been our go-to. Their solar light solutions are top-notch and have significantly improved our security."</p><div class="client-info"><h4>— Fitz Charles</h4><span>Business Owner, Nairobi</span></div></div>
+            <div class="testimonial-card glass-card reveal"><p>"Prompt, reliable, and transparent. Victor explained everything clearly and delivered exactly what was promised. A true expert in his field."</p><div class="client-info"><h4>— Emily Sawe</h4><span>Property Manager</span></div></div>
+        </div>
+    </section>
+
+    <section id="faq" class="container" style="padding: 5rem 0;">
+        <h2 class="section-title reveal">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item glass-card reveal"><div class="faq-question"><h3>What areas do you serve? <i class="fas fa-chevron-down"></i></h3></div><div class="faq-answer"><p>We are based in Kisumu, Kenya, but our services extend to all surrounding regions and can reach all destinations across Kenya for larger projects.</p></div></div>
+            <div class="faq-item glass-card reveal"><div class="faq-question"><h3>Are you licensed and insured? <i class="fas fa-chevron-down"></i></h3></div><div class="faq-answer"><p>Yes, VIQ Electrical is fully licensed and insured, ensuring peace of mind and professional service for all our clients.</p></div></div>
+            <div class="faq-item glass-card reveal"><div class="faq-question"><h3>Do you offer emergency services? <i class="fas fa-chevron-down"></i></h3></div><div class="faq-answer"><p>Absolutely! We understand electrical issues can arise at any time. We offer 24/7 emergency services. Just call our emergency line.</p></div></div>
+            <div class="faq-item glass-card reveal"><div class="faq-question"><h3>How do I get a quote? <i class="fas fa-chevron-down"></i></h3></div><div class="faq-answer"><p>You can get a quote by filling out our contact form, calling us directly, or sending a WhatsApp message. We aim to respond promptly.</p></div></div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="container" style="padding: 2rem 0;">
+        <h2 class="section-title reveal">Service Area</h2>
+        <div id="serviceMap"></div>
+        <p style="text-align: center; margin-top: 1rem;">📍 Based in Kisumu, serving all of Kenya</p>
+    </section>
+
+    <section id="contact" class="container" style="padding: 2rem 0 4rem;">
+        <h2 class="section-title reveal">Get in touch – we make it light</h2>
+        <div class="contact-flex">
+            <div class="contact-info reveal">
+                <h3><i class="fas fa-address-card"></i> Direct contact</h3>
+                <div class="contact-detail"><i class="fas fa-phone-alt"></i> <a href="tel:+254715817822" style="color:#eef2ff; text-decoration:none">+254 715 817 822 (Mobile)</a></div>
+                <div class="contact-detail"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/254715817822" target="_blank" style="color:#eef2ff">+254 715 817 822 (WhatsApp)</a></div>
+                <div class="contact-detail"><i class="fas fa-envelope"></i> <span id="displayEmail">victooketch3@gmail.com</span></div>
+                <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> Kisumu, Kenya (Can Reach All Destinations)</div>
+            </div>
+            <div class="contact-form reveal">
+                <h3><i class="fas fa-paper-plane"></i> Send a message</h3>
+                <form id="realContactForm">
+                    <input type="text" id="formName" placeholder="Your name" required>
+                    <input type="email" id="formEmail" placeholder="Email address" required>
+                    <textarea id="formMsg" rows="4" placeholder="Describe your electrical need..." required></textarea>
+                    <button type="submit" class="liquid-btn" style="width:100%"><i class="fas fa-paper-plane"></i> Send message →</button>
+                    <div id="formFeedback" style="margin-top:1rem; font-size:0.85rem;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer CTA -->
+<section class="container footer-cta reveal">
+    <div class="glass-card" style="text-align: center; padding: 3rem; border-radius: 2rem;">
+        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Ready to Light Up Your Space?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">Contact VIQ Electrical for reliable and professional electrical solutions.</p>
+        <a href="tel:+254715817822" id="footerCallBtn" class="liquid-btn"><i class="fas fa-phone-alt"></i> Get a Free Consultation</a>
+    </div>
+</section>
+
+<!-- Floating Action Button (FAB) -->
+<div class="fab-container">
+    <div class="fab-actions">
+        <a href="tel:+254715817822" class="fab-action call"><i class="fas fa-phone-alt"></i> Call</a>
+        <a href="https://wa.me/254715817822?text=Hello%20Victor%2C%20I%20need%20electrical%20help" target="_blank" class="fab-action whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="mailto:victooketch3@gmail.com" class="fab-action email"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+    <button class="fab-main liquid-btn" id="fabMainBtn"><i class="fas fa-bolt"></i> Need Help?</button>
+</div>
+
+<!-- NEW FULL-SCREEN SWIPER GALLERY -->
+<div id="fullscreenGallery">
+    <div style="width: 90%; max-width: 1200px; position: relative;">
+        <span id="closeGallery" style="position: absolute; top: -40px; right: 0; font-size: 2rem; cursor: pointer; color: #f5b042; z-index: 10;">&times;</span>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="wiring">Wiring</button>
+            <button class="filter-btn" data-filter="solar">Solar</button>
+            <button class="filter-btn" data-filter="tvmount">TV Mount</button>
+            <button class="filter-btn" data-filter="repair">Repair</button>
+        </div>
+        <div class="swiper mySwiper" style="width: 100%; height: auto; border-radius: 2rem; overflow: hidden;">
+            <div class="swiper-wrapper" id="swiper-wrapper"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+        <p style="text-align: center; margin-top: 1rem; color: #ccc;">Swipe or click arrows → tap a project for full details</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 VIQ ELECTRICAL SOLUTION SERVICES — “WE MAKE IT LIGHT” | Licensed & Insured</p>
+    <div style="margin-top: 0.5rem;">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a> &nbsp;
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a> &nbsp;
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
